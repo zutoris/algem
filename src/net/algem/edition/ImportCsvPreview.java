@@ -63,7 +63,8 @@ public class ImportCsvPreview
     BundleUtil.getLabel("Home.phone.label"),
     BundleUtil.getLabel("Mobile.phone.label"),
     BundleUtil.getLabel("Email.label"),
-    BundleUtil.getLabel("Parent.email.label")
+    BundleUtil.getLabel("Parent.email.label"),
+    BundleUtil.getLabel("Prof.certificat1.label")
   };
   private GemPanel configPanel;
   private JComboBox[] matchingBoxes;

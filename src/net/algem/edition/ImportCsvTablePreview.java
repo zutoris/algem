@@ -30,6 +30,7 @@ import javax.swing.table.JTableHeader;
 import javax.swing.table.TableColumnModel;
 import net.algem.contact.Contact;
 import net.algem.contact.ContactImport;
+import net.algem.util.GemLogger;
 import net.algem.util.MessageUtil;
 import net.algem.util.ui.GemPanel;
 import net.algem.util.ui.JTableModel;
@@ -75,7 +76,8 @@ public class ImportCsvTablePreview
     cm.getColumn(5).setPreferredWidth(40);
     cm.getColumn(6).setPreferredWidth(10);
     cm.getColumn(7).setPreferredWidth(20);
-    for (int i = 7; i < 17; i++) {
+    GemLogger.info("taille des colonnes "+cm.getColumnCount()); 
+    for (int i = 7; i < cm.getColumnCount()-1; i++) {
       cm.getColumn(i).setPreferredWidth(55);
     }
     JScrollPane scroll = new JScrollPane(table);

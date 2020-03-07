@@ -71,7 +71,7 @@ public class ContactIO
   }
 
   /**
-   *
+   * Création en BdD du contact avec son adresse, ses téléphones et emails.
    * @param c
    * @throws SQLException
    */

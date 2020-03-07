@@ -111,10 +111,18 @@ public class ImportCsvHandler {
 
         c.setInstrument(getField(rowData, map, 5));
 
+        idx = map.get(ImportCsvCtrl.IMPORT_FIELDS[18]); // teacher qualification
+        if (idx > -1) {
+          c.setCertif((String) rowData.get(idx));
+        }
+
         idx = map.get(ImportCsvCtrl.IMPORT_FIELDS[8]); // parent name
         if (idx > -1) {
-          p = new Contact();
-          p.setName((String) rowData.get(idx));
+          Object pname = rowData.get(idx);
+          if (pname!=null) {
+        	p = new Contact();
+        	p.setName((String) pname);
+          }
         }
 
         idx = map.get(ImportCsvCtrl.IMPORT_FIELDS[6]); // parent id

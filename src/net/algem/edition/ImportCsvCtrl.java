@@ -73,7 +73,7 @@ import org.supercsv.io.ICsvListReader;
 public class ImportCsvCtrl
   extends CardCtrl {
 
-  private static final short COLS = 18;
+  private static final short COLS = 19;
   static final String[] IMPORT_FIELDS = {
     BundleUtil.getLabel("Number.abbrev.label"),
     BundleUtil.getLabel("Person.civility.label"),
@@ -92,7 +92,8 @@ public class ImportCsvCtrl
     BundleUtil.getLabel("Home.phone.label"),
     BundleUtil.getLabel("Mobile.phone.label"),
     BundleUtil.getLabel("Email.label"),
-    BundleUtil.getLabel("Parent.email.label")
+    BundleUtil.getLabel("Parent.email.label"),
+    BundleUtil.getLabel("Prof.certificat1.label")
   };
 
   private Map<String, Integer> importMap;
@@ -342,6 +343,9 @@ public class ImportCsvCtrl
           case 16:
           case 17:
             processors[idx] = new Optional(new Trim(new Truncate(64)));// email
+            break;
+          case 18:
+            processors[idx] = new Optional(new Trim(new Truncate(32)));// certif profs
             break;
           default: processors[idx] = new Optional();
         }

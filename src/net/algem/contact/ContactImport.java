@@ -35,6 +35,7 @@ public class ContactImport
   private Contact parent;
   private Date birthDate;
   private String instrument;
+  private String certif;
 
   public Contact getParent() {
     return parent;
@@ -58,6 +59,14 @@ public class ContactImport
 
   public void setInstrument(String instrument) {
     this.instrument = instrument;
+  }
+
+  public String getCertif() {
+    return certif;
+  }
+
+  public void setCertif(String certif) {
+    this.certif = certif;
   }
 
 }
