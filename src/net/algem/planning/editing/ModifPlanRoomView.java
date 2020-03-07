@@ -104,7 +104,7 @@ public class ModifPlanRoomView
           removeNote();
         }
       } catch (SQLException ex) {
-        GemLogger.log(Level.WARNING, ex.getMessage());
+        GemLogger.log(Level.WARNING, ex);
       }
     }
     else if (src == checkAbsence) {

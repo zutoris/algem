@@ -66,7 +66,7 @@ public abstract class ScheduleCanvas
     try {
       s = Integer.parseInt(start.substring(0, start.indexOf(':'))) * 60;
     } catch(NumberFormatException nfe) {
-      GemLogger.log(nfe.getMessage());
+      GemLogger.logException(nfe);
     }
     GLOBAL_START_TIME = s;
   }

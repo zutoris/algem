@@ -106,7 +106,7 @@ public class ModuleDlg
           price.commitEdit();
           calculatedPrice.setValue(calculatePayment(module, (String) getField(5), (PayFrequency) getField(6), (PricingPeriod) getField(9), getField(4)));
         } catch (ParseException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex);
         }
 
       }
@@ -281,7 +281,7 @@ public class ModuleDlg
         try {
           hours.commitEdit();
         } catch (ParseException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex);
         }
         return ((Number) hours.getValue()).doubleValue();
       case 9:
@@ -302,7 +302,7 @@ public class ModuleDlg
 //        price.setValue(module.getBasePrice());
         adjustBasePrice(module.getBasePrice(), val);
       } catch (SQLException ex) {
-        GemLogger.log(getClass().getName() + "#itemStateChanged " + ex.getMessage());
+        GemLogger.logException(ex);
       }
       if (module == null || personFile == null) {
         return;

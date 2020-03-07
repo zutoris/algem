@@ -178,7 +178,7 @@ public class SimplePhotoHandler
       out.flush();
       return out.toByteArray();
     } catch (IOException e) {
-      GemLogger.log(e.getMessage());
+      GemLogger.logException(e);
       return null;
     }
   }
@@ -236,7 +236,7 @@ public class SimplePhotoHandler
           int p = ++k * 100 / size;
           setProgress(p);
         } catch (IOException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex);
         }
       }
       return saved;
@@ -250,7 +250,7 @@ public class SimplePhotoHandler
         saved = get();
       } catch (InterruptedException | ExecutionException ex) {
         error = ex.getMessage();
-        GemLogger.log(error);
+        GemLogger.logException(ex);
       }
       if (saved >= 0) {
         MessagePopup.information(parent, MessageUtil.getMessage("photos.imported", saved));
@@ -306,7 +306,7 @@ public class SimplePhotoHandler
         exported = get();
       } catch (InterruptedException | ExecutionException ex) {
         error = ex.getMessage();
-        GemLogger.log(error);
+        GemLogger.logException(ex);
       }
       if (exported >= 0) {
         MessagePopup.information(parent, MessageUtil.getMessage("files.exported", exported));

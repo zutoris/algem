@@ -376,7 +376,7 @@ public class PdfHandler {
                     in.close();
                 }
             } catch (IOException ex) {
-                GemLogger.log(ex.getMessage());
+                GemLogger.logException(ex);
             }
         }
 

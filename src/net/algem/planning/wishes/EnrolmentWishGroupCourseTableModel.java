@@ -210,7 +210,7 @@ public class EnrolmentWishGroupCourseTableModel extends AbstractTableModel {
     
         return year+" ans "+month+" mois";
     } catch (Exception e) {
-        GemLogger.log("EnrolmentWishGroupCourseTableModel.ageFromBirth:" + e);
+        GemLogger.logException(e);
     }
     return "";
 }

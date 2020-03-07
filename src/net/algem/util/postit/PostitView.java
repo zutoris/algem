@@ -100,7 +100,7 @@ public class PostitView
       User u = (User) DataCache.findId(p.getIssuer(), Model.User);
       issuer.setText(u == null ? null : u.getFirstnameName());
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName() + "#set :"+ ex.getMessage());
+      GemLogger.logException(ex);
     }
     type.setSelectedIndex(p.getType());
     term.set(p.getTerm());

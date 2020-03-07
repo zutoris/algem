@@ -132,7 +132,7 @@ public class StandardOrderLineDlg
             update(e);
           }
         } catch (ParseException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex.getMessage(), ex);
         } finally {
           dlg.setVisible(false);
           dlg.dispose();

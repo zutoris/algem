@@ -346,7 +346,7 @@ public class ModuleCodeView
         others.setSelectedIndex(0);
       }
     } catch (Exception ex) {
-      GemLogger.log(getClass().getName()+"#setCode :"+ex.getMessage());
+      GemLogger.logException(ex);
     }
   }
 

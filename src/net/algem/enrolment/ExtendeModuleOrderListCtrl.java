@@ -247,14 +247,14 @@ public class ExtendeModuleOrderListCtrl
       }
       out.println(sb.toString());
     } catch (IOException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     } finally {
       try {
         if (f.length() > 0) {
           new DesktopOpenHandler().open(f.getAbsolutePath());
         }
       } catch (DesktopHandlerException ex) {
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
       }
     }
   }

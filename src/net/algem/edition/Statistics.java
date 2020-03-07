@@ -317,7 +317,7 @@ public abstract class Statistics
       try {
         browser.browse(new File(path).toURI().toString());
       } catch (DesktopHandlerException ex) {
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
       }
     }
   }

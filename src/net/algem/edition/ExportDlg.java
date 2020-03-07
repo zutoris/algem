@@ -295,7 +295,7 @@ public abstract class ExportDlg
     } catch (IOException e) {
       GemLogger.logException(query, e, this);
     } catch (DesktopHandlerException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       MessagePopup.warning(this, ex.getMessage());
     }
 

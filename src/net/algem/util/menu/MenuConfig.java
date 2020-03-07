@@ -225,7 +225,7 @@ public class MenuConfig
         GemModule m = new DefaultGemModule("Menu.card", ctrl);
         desktop.addModule(m);
       } catch (SQLException ex) {
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
       }
     } else if (menus.get("Menu.bank.label").equals(arg)) {
       BankSearchCtrl bankCtrl = new BankSearchCtrl(dc);

@@ -101,7 +101,7 @@ public class RoomTimesIO
       dc.commit();
     } catch (SQLException sqe) {
       dc.rollback();
-      GemLogger.log(sqe.getMessage());
+      GemLogger.logException(sqe);
       throw sqe;
     } finally {
       dc.setAutoCommit(true);

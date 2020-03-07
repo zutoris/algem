@@ -77,7 +77,7 @@ public class RoomView
     try {
       estab = new EstabChoice(new GemList<Establishment>(EstablishmentIO.find(" ORDER BY p.nom", DataCache.getDataConnection())));
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
     rate = new RoomRateChoice(dataCache.getList(Model.RoomRate));
     active = new JCheckBox(labels[6], true);

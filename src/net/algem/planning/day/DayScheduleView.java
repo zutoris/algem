@@ -103,9 +103,9 @@ public class DayScheduleView
       e = Integer.parseInt(ConfigUtil.getConf(ConfigKey.DEFAULT_ESTABLISHMENT.getKey()));
       estab =  (Establishment) DataCache.findId(e, Model.Establishment);
     } catch (NumberFormatException nfe) {
-      GemLogger.log(getClass().getName() + "#init " + nfe.getMessage());
+      GemLogger.logException(nfe);
     } catch (SQLException sqe) {
-      GemLogger.log(sqe.getMessage());
+      GemLogger.logException(sqe);
     }
     String teacherManaged = ConfigUtil.getConf(ConfigKey.TEACHER_MANAGEMENT.getKey());
     // First tab depends on the status "managed" of the teachers in the general configuration

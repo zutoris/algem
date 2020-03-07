@@ -144,7 +144,7 @@ public class MemberCardService {
     try {
       return planningService.getCourseFromAction(cc.getAction());
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName() + "#getCours :" + ex.getMessage());
+      GemLogger.logException(ex);
     }
     return null;
   }

@@ -134,7 +134,7 @@ public class ScriptArgumentTableModel
                   return longFormat.parse((String) cellEditorValue).intValue();
                   // return Integer.parseInt((String) cellEditorValue);
                 } catch (ParseException ex) {
-                  GemLogger.log(ex.getMessage());
+                  GemLogger.logException(ex);
                 }
               }
               return cellEditorValue;

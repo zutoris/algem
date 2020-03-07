@@ -341,7 +341,7 @@ public class PlanningExportService {
               sb.append('\n').append(per.getNickName() != null && per.getNickName().length() > 0 ? per.getNickName() : per.getAbbrevFirstNameName());
             }
           } catch (SQLException ex) {
-            GemLogger.log(ex.getMessage());
+            GemLogger.logException(ex);
           }
         }
         break;

@@ -578,7 +578,7 @@ public class PersonFileEditor
           BANK_BRANCH_IO.update(a.getId(), a.getBicCode());
         }
       } catch (SQLException ex) {
-        GemLogger.log(Level.WARNING, ex.getMessage());
+        GemLogger.log(Level.WARNING, ex);
       }
     }
 
@@ -589,7 +589,7 @@ public class PersonFileEditor
       String query = "INSERT INTO " + EmployeeIO.TYPE_TABLE + " VALUES(" + dossier.getId() + ")";
       dc.executeUpdate(query);
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
   }
 
@@ -1137,9 +1137,9 @@ public class PersonFileEditor
       DesktopOpenHandler handler = new DesktopOpenHandler();
       handler.open(rtfExport.getPath(), path);
     } catch (DesktopHandlerException de) {
-      GemLogger.log(de.getMessage());
+      GemLogger.logException(de);
     } catch (FileNotFoundException fe) {
-      GemLogger.log(fe.getMessage());
+      GemLogger.logException(fe);
       JOptionPane.showMessageDialog(view, path, fe.getMessage(), JOptionPane.ERROR_MESSAGE);
     }
   }

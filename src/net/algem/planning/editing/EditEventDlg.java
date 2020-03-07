@@ -222,7 +222,7 @@ public class EditEventDlg
         desktop.postEvent(new ModifPlanEvent(this, range.getDate(), range.getDate()));
       }
     } catch (PlanningException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
     dispose();
   }

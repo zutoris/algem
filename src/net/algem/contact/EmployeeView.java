@@ -132,7 +132,7 @@ public class EmployeeView
         try {
           nir.commitEdit();
         } catch (ParseException ex) {
-          GemLogger.log(Level.WARNING, ex.getMessage());
+          GemLogger.log(Level.WARNING, ex);
         }
          markNir();
       }
@@ -266,7 +266,7 @@ public class EmployeeView
       mask = new MaskFormatter(NIR_FORMAT);
     } catch (ParseException ex) {
       mask = new MaskFormatter();
-      GemLogger.log(Level.SEVERE, ex.getMessage());
+      GemLogger.log(Level.SEVERE, ex);
     }
     mask.setValueContainsLiteralCharacters(false);
 
@@ -332,7 +332,7 @@ public class EmployeeView
      try {
       ((DesktopOpenHandler) handler).open(path);
       } catch (DesktopHandlerException ex) {
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
         MessagePopup.warning(this, ex.getMessage());
       }
   }

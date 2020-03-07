@@ -390,7 +390,7 @@ public class ImportCsvCtrl
         Charset.forName("windows-1252")
       };
     } catch (IllegalCharsetNameException | UnsupportedCharsetException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       return Charset.availableCharsets().values().toArray();
     }
 

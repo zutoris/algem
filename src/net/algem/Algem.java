@@ -306,7 +306,7 @@ public class Algem
         props.putAll(p);
         GemLogger.info("Loaded properties " + path);
       } catch (FileNotFoundException e) {
-        GemLogger.log(e.getMessage());
+        GemLogger.logException(e);
         InputStream input = getClass().getClassLoader().getResourceAsStream(path);
         if (input != null) {
           try {
@@ -314,7 +314,7 @@ public class Algem
             props.putAll(p);
             GemLogger.info("Loaded internal properties " + path);
           } catch (IOException ex) {
-            GemLogger.log(ex.getMessage());
+            GemLogger.logException(ex);
           }
         }
       } catch (IOException e) {
@@ -493,7 +493,7 @@ public class Algem
       } */
       UIManager.setLookAndFeel(lafClassName);
     } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
-      GemLogger.log("look&feel exception : " + ex.getMessage());
+      GemLogger.logException(ex);
     }
 
     String lafName = UIManager.getLookAndFeel().getName();
@@ -574,7 +574,7 @@ public class Algem
           icon = ImageUtil.createImageIcon(ImageUtil.ALGEM_LOGO);
         }
       } catch (SQLException | IOException ex) {
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
         icon = ImageUtil.createImageIcon(ImageUtil.ALGEM_LOGO);
       }
 

@@ -157,7 +157,7 @@ public class RightsCtrl
           service.delete(user);
           cancel();
         } catch (UserException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex);
           MessagePopup.warning(this, MessageUtil.getMessage("delete.error"));
         }
       }

@@ -90,7 +90,7 @@ public class PhotoIO
       }
       return true;
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       return false;
     } finally {
       closeRS(rs);

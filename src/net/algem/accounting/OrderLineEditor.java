@@ -229,7 +229,7 @@ public class OrderLineEditor
             update(e);
           }
         } catch (ParseException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex.getMessage(), ex);
         } finally {
           closeEditorView();
         }

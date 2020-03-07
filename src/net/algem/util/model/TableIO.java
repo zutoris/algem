@@ -155,7 +155,7 @@ public abstract class TableIO
       try {
         stmt.close();
       } catch (SQLException ignore) {
-        GemLogger.log("close exception " + ignore.getMessage());
+        GemLogger.logException(ignore);
       }
     }
   }
@@ -165,7 +165,7 @@ public abstract class TableIO
       try {
         rs.close();
       } catch (SQLException ignore) {
-        GemLogger.log("close exception " + ignore.getMessage());
+        GemLogger.logException(ignore);
       }
     }
   }

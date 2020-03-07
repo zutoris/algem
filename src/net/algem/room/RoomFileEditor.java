@@ -311,7 +311,7 @@ public class RoomFileEditor
           room.setContact(new Contact((Person) DataCache.findId(oldContactId, Model.Person)));
           room.setPayer((Person) DataCache.findId(oldPayerId, Model.Person));
         } catch (SQLException ex) {
-          GemLogger.log(Level.SEVERE, ex.getMessage());
+          GemLogger.log(Level.SEVERE, ex);
         }
 
       }
@@ -433,7 +433,7 @@ public class RoomFileEditor
       desktop.removeGemEventListener(this);
       desktop.removeModule(this);
     } catch (GemCloseVetoException ex) {
-      GemLogger.log(Level.WARNING, ex.getMessage());
+      GemLogger.log(Level.WARNING, ex);
     }
   }
 

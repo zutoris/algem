@@ -114,7 +114,7 @@ public class GemGroupService
       });
 
     } catch (Exception ex) {
-      GemLogger.log(getClass().getName() + "#update " + ex.getMessage());
+      GemLogger.logException(ex);
       throw new GroupException(ex.getMessage());
     }
   }
@@ -150,7 +150,7 @@ public class GemGroupService
       });
 
     } catch (Exception se) {
-      GemLogger.log(getClass().getName() + "#update " + se.getMessage());
+      GemLogger.logException(se);
       throw new GroupException(se.getMessage());
     }
 
@@ -236,7 +236,7 @@ public class GemGroupService
         Account a = AccountPrefIO.getAccount(p, dc);
         membershipAccount = a.getId();
       } catch (SQLException ex) {
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
       }
       where.append(" OR (adherent IN (");
       for (Musician m : lm) {

@@ -300,7 +300,7 @@ public class DayPlanView
     try {
       return (Note) DataCache.findId(actionId, Model.ActionMemo);
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       return null;
     }
   }

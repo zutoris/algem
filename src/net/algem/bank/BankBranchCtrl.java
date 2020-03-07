@@ -137,7 +137,7 @@ public class BankBranchCtrl
       }
       bankBranchIO.delete(branch);
     } catch (Exception ex) {
-      GemLogger.log(Level.WARNING, ex.getMessage());
+      GemLogger.log(Level.WARNING, ex);
       MessagePopup.error(this, ex.getMessage());
     }
   }
@@ -155,7 +155,7 @@ public class BankBranchCtrl
       try {
         branch.setAddress(AddressIO.findId(branch.getId(), dc));
       } catch (SQLException ex) {
-        GemLogger.log(this.toString(), "loadCard", ex.getMessage());
+        GemLogger.log(this.toString(), "loadCard", ex);
       }
     }
     branchView.setBankBranch(branch);

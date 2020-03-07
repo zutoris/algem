@@ -101,7 +101,7 @@ public class ChangeModuleTimeDlg
     try {
       hours.commitEdit();
     } catch (ParseException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
     return Hour.decimalToMinutes(((Number) hours.getValue()).doubleValue());
   }

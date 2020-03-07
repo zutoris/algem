@@ -106,7 +106,7 @@ public class MemberCardEditor implements Printable {
         job.print(attSet);
       } catch (PrinterException e) {
         // The job did not successfully complete
-        GemLogger.log("MemberCardEditor#edit[PrinterException] : " + e.getMessage());
+        GemLogger.logException("[PrinterException]", e);
       }
     }
 

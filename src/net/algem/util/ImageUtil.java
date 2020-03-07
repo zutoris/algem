@@ -148,7 +148,7 @@ public class ImageUtil
         return img;
       }
     } catch (Exception e) {
-      GemLogger.log("#formatPhoto "+e.getMessage());
+      GemLogger.logException(e);
       return null;
     }
   }
@@ -221,7 +221,7 @@ public class ImageUtil
         try {
           img = PHOTO_HANDLER.saveFromBuffer(idper, orig);
         } catch (DataException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex);
         }
       } else {
         img = getPhotoDefault();

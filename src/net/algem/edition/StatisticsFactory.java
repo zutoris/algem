@@ -49,7 +49,7 @@ public class StatisticsFactory
       Class c = Class.forName("net.algem.plugins.StatisticsPlugin");
       return (Statistics) c.newInstance();
     } catch (InstantiationException | IllegalAccessException | ClassNotFoundException ex) {
-      GemLogger.log(Level.SEVERE, ex.getMessage());
+      GemLogger.log(Level.SEVERE, ex);
     }
     return null;
   }

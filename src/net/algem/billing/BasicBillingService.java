@@ -439,7 +439,7 @@ if (total <= 0 || (total - inv.getDownPayment()) <= 0) return; //XXX TEST
     try {
       n = v.getClass().newInstance();
     } catch (ReflectiveOperationException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       return null;
     }
 

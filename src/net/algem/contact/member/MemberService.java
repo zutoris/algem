@@ -386,7 +386,7 @@ public class MemberService {
     try {
       return ModuleOrderIO.findModules(member, start, end, dc);
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       return new ArrayList<Module>();
     }
   }

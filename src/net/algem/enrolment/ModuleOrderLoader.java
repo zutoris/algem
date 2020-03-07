@@ -71,7 +71,7 @@ public class ModuleOrderLoader
       task.addPropertyChangeListener(progressManager);
       task.execute();
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
   }
 

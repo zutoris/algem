@@ -254,7 +254,7 @@ public class DayScheduleCtrl
           ).exportPlanning(planning, destFile);
           new DesktopOpenHandler().open(destFile.getAbsolutePath());
         } catch (IOException | DesktopHandlerException e) {
-          GemLogger.log(e.getMessage());
+          GemLogger.logException(e);
         }
       }
     } else if (src == miEstab) {

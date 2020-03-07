@@ -472,7 +472,7 @@ public class ScheduleDetailCtrl
           }
           sb.delete(0, sb.length());
         } catch (SQLException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex);
         }
       }
 

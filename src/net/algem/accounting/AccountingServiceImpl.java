@@ -304,7 +304,7 @@ public class AccountingServiceImpl implements AccountingService {
       }
       return stdOrderLineIO.exists(o, start, cache.getEndOfYear().getDate(), member);
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex.getMessage(), ex);
       return false;
     }
   }

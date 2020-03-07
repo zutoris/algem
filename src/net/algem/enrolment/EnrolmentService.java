@@ -1007,7 +1007,7 @@ public class EnrolmentService
     try {
       return ModuleOrderIO.getCompletedTime(idper, mOrderId, start, end, dc);
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName() + "#getCompletedTime " + ex.getMessage());
+      GemLogger.logException(ex);
       return 0;
     }
   }
@@ -1026,7 +1026,7 @@ public class EnrolmentService
     try {
       return ModuleOrderIO.getCompletedTime(idper, mOrderId, start, dc);
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName() + "#getCompletedTime " + ex.getMessage());
+      GemLogger.logException(ex);
       return 0;
     }
   }
@@ -1035,7 +1035,7 @@ public class EnrolmentService
     try {
       return ModuleOrderIO.getLastSchedule(idper, mOrderId, dc);
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName() + "#getLastScheduledDate " + ex.getMessage());
+      GemLogger.logException(ex);
       return null;
     }
   }
@@ -1044,7 +1044,7 @@ public class EnrolmentService
     try {
       return CourseOrderIO.getLastSchedule(idper, courseOrderId, dc);
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName() + "#getLastScheduledDate " + ex.getMessage());
+      GemLogger.logException(ex);
       return null;
     }
   }

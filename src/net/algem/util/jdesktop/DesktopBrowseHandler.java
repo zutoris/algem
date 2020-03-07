@@ -55,9 +55,9 @@ public class DesktopBrowseHandler extends DesktopHandler
       try {
         getDesktop().browse(new URI(url));
       } catch (URISyntaxException e) {
-        GemLogger.log(e.getMessage());
+        GemLogger.logException(e);
       } catch (IOException ex) {
-        GemLogger.log("io exception " + ex.getMessage());
+        GemLogger.logException(ex);
         executeInternetClient(url);
       }
     } else {

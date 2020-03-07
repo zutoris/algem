@@ -230,7 +230,7 @@ public class CourseCtrl
     try {
       return loadCard(DataCache.findId(id, Model.Course));
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName() + "#loadId :" + ex.getMessage());
+      GemLogger.logException(ex);
     }
     return false;
   }

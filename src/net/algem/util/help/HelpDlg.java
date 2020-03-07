@@ -95,7 +95,7 @@ public class HelpDlg
       try {
         editorPane.setPage(helpURL);
       } catch (IOException ex) {
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
       }
     } else {
       GemLogger.log("NULL URL");
@@ -122,7 +122,7 @@ public class HelpDlg
     try {
       editorPane.setPage(getResource("introduction.html"));
     } catch (IOException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
     
     JScrollPane scroll = new JScrollPane(editorPane);

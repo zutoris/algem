@@ -224,7 +224,7 @@ public class RentCtrl
     try {
       return loadCard(DataCache.findId(id, Model.RentableObject));
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName() + "#loadId :" + ex.getMessage());
+      GemLogger.logException(ex);
     }
     return false;
   }

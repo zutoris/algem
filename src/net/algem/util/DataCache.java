@@ -1305,7 +1305,7 @@ public class DataCache {
         try {
             setDates();
         } catch (ConfigException ex) {
-            GemLogger.log(ex.getMessage());
+            GemLogger.logException(ex);
         }
 
     }
@@ -1353,7 +1353,7 @@ public class DataCache {
             out.writeObject(v);
             fic.close();
         } catch (IOException e) {
-            GemLogger.log("serializ err :" + e);
+            GemLogger.logException(e);
         }
     }
 

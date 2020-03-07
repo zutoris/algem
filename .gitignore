@@ -21,3 +21,8 @@ cloclist
 loc-doc.txt
 loc.txt
 .attach*
+
+# Eclipse configuration
+.classpath
+.project
+.settings/

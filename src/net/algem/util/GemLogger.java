@@ -26,6 +26,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import net.algem.util.ui.SQLErrorDlg;
 
 /**
@@ -64,6 +65,10 @@ public class GemLogger {
 
   public static void log(Level level, String sourceClass, String sourceMethod, String msg) {
     LOGGER.logp(level, sourceClass, sourceMethod, msg);
+  }
+
+  public static void log(Level level, Throwable thrown) {
+	LOGGER.log(level, thrown.getMessage(), thrown);
   }
 
   public static void log(String sourceClass, String sourceMethod, Throwable thrown) {

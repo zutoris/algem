@@ -78,7 +78,7 @@ public class SigningSheetCtrl
     /*try {
       company = new OrganizationIO(dc).getDefault();
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }*/
     this.dlg = new SigningSheetView(desktop.getFrame(), true);
     //dateFormat.setTimeZone(TimeZone.getTimeZone("Europe/Paris"));
@@ -157,7 +157,7 @@ public class SigningSheetCtrl
       }
       pw.println("</body></html>");
     } catch (SQLException | IOException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
     return null;
   }
@@ -176,7 +176,7 @@ public class SigningSheetCtrl
       }
       return Base64.encodeBase64String(IOUtils.toByteArray(in));
     } catch (Exception ex) {
-      GemLogger.log(Level.WARNING, ex.getMessage());
+      GemLogger.log(Level.WARNING, ex);
       return "";
     }
 
@@ -193,7 +193,7 @@ public class SigningSheetCtrl
           browser.browse(temp.toURI().toString());
         }
       } catch (DesktopHandlerException de) {
-        GemLogger.log(de.getMessage());
+        GemLogger.logException(de);
       }
     }
   }
