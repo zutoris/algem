@@ -203,7 +203,7 @@ public class AttendanceSheet
         line += 30;
       }
     } catch (SQLException e) {
-      GemLogger.log(getClass().getName(), "edite", e);
+      GemLogger.logException(e);
     } finally {
       if (g != null) {
         g.dispose();
@@ -285,7 +285,7 @@ public class AttendanceSheet
             instrumentName = " - " + instrument.getName();
           }
         } catch (Exception e) {
-          GemLogger.log(e.getMessage());
+          GemLogger.logException(e);
         }
       }
 

@@ -518,7 +518,7 @@ public class MemberEnrolmentEditor
       stopDlg = new StopCourseDlg(desktop, dossier.getId(), cc, c, service);
       stopDlg.setVisible(true);
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName(), "#stopCourse :", ex.getMessage());
+      GemLogger.logException(ex);
     }
   }
 
@@ -618,7 +618,7 @@ public class MemberEnrolmentEditor
       try {
         service.update(cc);
       } catch (SQLException e) {
-        GemLogger.log(e.getMessage());
+        GemLogger.logException(e);
       }
     }
   }
@@ -897,7 +897,7 @@ public class MemberEnrolmentEditor
         service.update(mo);
       } catch (SQLException ex) {
         mo.setTotalTime(oldTime);
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
         MessagePopup.warning(this, ex.getMessage());
       }
     }
@@ -965,15 +965,15 @@ public class MemberEnrolmentEditor
             browser.browse(temp.toURI().toString());
           }
         } catch (DesktopHandlerException de) {
-          GemLogger.log(de.getMessage());
+          GemLogger.logException(de);
         }
       }
 
     } catch (FileNotFoundException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       MessagePopup.error(this, MessageUtil.getMessage("file.not.found.exception") + " :\n" + ex.getMessage());
     } catch (IOException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     } finally {
       desktop.setDefaultCursor();
     }
@@ -1064,7 +1064,7 @@ public class MemberEnrolmentEditor
        */
       return fillActivityAMPM(ranges, new String[]{"14:00", ""});
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       return "";
     }
   }
@@ -1078,7 +1078,7 @@ public class MemberEnrolmentEditor
         ranges = service.findFollowUp(idper, start.getDate(), end.getDate(), actions);
       }
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
     return ranges;
   }

@@ -92,7 +92,7 @@ public class HistoSubscriptionCardTableModel
           RehearsalPass c = (RehearsalPass) DataCache.findId(pc.getPassId(), Model.PassCard);
           return c == null ? BundleUtil.getLabel("Unknown.label") : c.getLabel();
         } catch (SQLException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex);
           return null;
         }
       case 3:
@@ -116,7 +116,7 @@ public class HistoSubscriptionCardTableModel
       }
     } catch (MemberException ex) {
       c.setRest(oldRest);
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
 
   }

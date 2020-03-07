@@ -39,7 +39,7 @@ public class BundleUtil
     try {
       DEFAULT_BUNDLE =  ResourceBundle.getBundle("algem");
     } catch(MissingResourceException e) {
-      GemLogger.log(Level.SEVERE, e.getMessage());
+      GemLogger.log(Level.SEVERE, e);
       MessagePopup.error(null, MessageUtil.getMessage("file.not.found.exception", "algem.properties"));
     }
   }
@@ -66,7 +66,7 @@ public class BundleUtil
     try {
       label = bundle.getString(key);
     } catch (MissingResourceException e) {
-			GemLogger.log(e.getKey()+" : "+e.getMessage());
+			GemLogger.logException(e.getKey()+" : "+e.getMessage(), e);
 			if (key.endsWith("label")) {
 				key = key.substring(0, key.lastIndexOf('.'));
 			}	else {

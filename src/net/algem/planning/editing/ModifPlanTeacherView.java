@@ -236,7 +236,7 @@ public class ModifPlanTeacherView
         resetRange();
       }
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       resetRange();
     }
   }

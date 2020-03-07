@@ -120,7 +120,7 @@ public class RehearsalPassView
     try {
       totalTime.commitEdit();
     } catch (ParseException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
     int total = (int) ((double) totalTime.getValue() * 60);
     int min = minTime.getHour().toMinutes();

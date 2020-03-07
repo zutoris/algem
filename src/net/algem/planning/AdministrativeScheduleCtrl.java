@@ -225,7 +225,7 @@ public class AdministrativeScheduleCtrl
     } catch (PlanningException e) {
       desktop.setDefaultCursor();
       MessagePopup.warning(this, e.getMessage());
-      GemLogger.log(e.getMessage());
+      GemLogger.logException(e);
     }
   }
 

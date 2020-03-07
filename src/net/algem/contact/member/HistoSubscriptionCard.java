@@ -158,7 +158,7 @@ public class HistoSubscriptionCard
       ((CardLayout) histoPanel.getLayout()).first(histoPanel);
       loaded = cards.size() > 0;
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
   }
   
@@ -172,7 +172,7 @@ public class HistoSubscriptionCard
         sessionTableModel.addItem(s);
       }
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
   }
   

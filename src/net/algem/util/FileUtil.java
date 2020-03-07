@@ -207,7 +207,7 @@ public class FileUtil
     try {
       ((DesktopOpenHandler) handler).open(path);
     } catch (DesktopHandlerException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
   }
 

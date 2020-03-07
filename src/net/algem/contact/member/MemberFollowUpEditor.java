@@ -119,9 +119,9 @@ public class MemberFollowUpEditor
           try {
             modification(n);
           } catch (SQLException sqe) {
-            GemLogger.log(sqe.getMessage());
+            GemLogger.logException(sqe);
           } catch (PlanningException pe) {
-            GemLogger.log(pe.getMessage());
+            GemLogger.logException(pe);
           }
         }
       }
@@ -240,9 +240,9 @@ public class MemberFollowUpEditor
       try {
         modification(n);
       } catch (SQLException e) {
-        GemLogger.log(e.getMessage());
+        GemLogger.logException(e);
       } catch (PlanningException pe) {
-        GemLogger.log(pe.getMessage());
+        GemLogger.logException(pe);
       }
     } else if (src == btDelete) {
       try {

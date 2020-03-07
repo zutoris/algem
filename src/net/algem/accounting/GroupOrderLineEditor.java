@@ -191,7 +191,7 @@ public class GroupOrderLineEditor
       dc.rollback();
       GemLogger.logException(MessageUtil.getMessage("update.error"), ex, this);
     } catch (ParseException pe) {
-      GemLogger.log(pe.getMessage());
+      GemLogger.logException(pe.getMessage(), pe);
     } finally {
       dc.setAutoCommit(true);
     }

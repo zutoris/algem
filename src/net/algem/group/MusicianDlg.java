@@ -164,7 +164,7 @@ public class MusicianDlg
         int id = Integer.parseInt(no.getText());
         setMusician((Person) DataCache.findId(id, Model.Person), dc);
       } catch (NumberFormatException | SQLException ex) {
-        GemLogger.log(Level.SEVERE, ex.getMessage());
+        GemLogger.log(Level.SEVERE, ex);
       }
     } else if (evt.getSource() == btSearch) {
       PersonFileSearchCtrl pfSearch = new PersonFileSearchCtrl(desktop, BundleUtil.getLabel("Contact.browser.label"), this);
@@ -205,7 +205,7 @@ public class MusicianDlg
       try {
         setMusician(c, DataCache.getDataConnection());
       } catch (SQLException ex) {
-        GemLogger.log(Level.SEVERE, ex.getMessage());
+        GemLogger.log(Level.SEVERE, ex);
       }
     }
   }

@@ -124,7 +124,7 @@ public class HistoQuote
         load(service.getQuotations(rangePanel.getStart(), rangePanel.getEnd()));
       }
     } catch (SQLException ex) {
-      GemLogger.log(Level.SEVERE, ex.getMessage());
+      GemLogger.log(Level.SEVERE, ex);
     } finally {
       desktop.setDefaultCursor();
     }

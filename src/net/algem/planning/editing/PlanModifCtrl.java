@@ -316,10 +316,10 @@ public class PlanModifCtrl
         confirmBooking(plan);
       }
     } catch (PlanningException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       MessagePopup.warning(desktop.getFrame(), ex.getMessage());
     } catch (SQLException sqe) {
-      GemLogger.log(sqe.getMessage());
+      GemLogger.logException(sqe);
     }
   }
 
@@ -855,7 +855,7 @@ public class PlanModifCtrl
         }
       }
     } catch (SQLException sqe) {
-      GemLogger.log(sqe.getMessage());
+      GemLogger.logException(sqe);
       return;
     }
 
@@ -935,7 +935,7 @@ public class PlanModifCtrl
       } catch (SQLException ex) {
         GemLogger.logException("rehearsal.delete.exception", ex);
       } catch (MemberException ex) {
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
       }
     }
   }
@@ -951,7 +951,7 @@ public class PlanModifCtrl
     try {
       return Integer.parseInt(confDelay);
     } catch (NumberFormatException nfe) {
-      GemLogger.log(nfe.getMessage());
+      GemLogger.logException(nfe);
       return def;
     }
   }
@@ -1094,7 +1094,7 @@ public class PlanModifCtrl
       GemLogger.logException(ex);
       MessagePopup.warning(null, ex.getMessage());
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       MessagePopup.warning(null, ex.getMessage());
     }
   }

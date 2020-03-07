@@ -280,7 +280,7 @@ public class ImportServiceImpl implements ImportService {
             } catch (Exception e) {
               String err = "CONTACT " + c.toString() + "\n";
               err += e.getMessage();
-              GemLogger.log(e.getMessage() + " IMPORT CONTACT : " + c.toString());
+              GemLogger.logException(e.getMessage() + " IMPORT CONTACT : " + c.toString(), e);
               setProgress(100);
               throw new ImportException(err);
             }

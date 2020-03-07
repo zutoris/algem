@@ -107,7 +107,7 @@ public class EstabSearchCtrl
       ((CardLayout) wCard.getLayout()).show(wCard, "liste");
       list.loadResult(v);
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
   }
 
@@ -123,7 +123,7 @@ public class EstabSearchCtrl
           desktop.getDataCache().remove(et); // do not remote propagation
         }
       } catch (SQLException ex) {
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
       }
       return;
     }

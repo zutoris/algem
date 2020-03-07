@@ -140,7 +140,7 @@ public class PersonSubscriptionCardIO
       dc.commit();
     } catch (SQLException ex) {
       dc.rollback();
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     } finally {
       dc.setAutoCommit(true);
     }

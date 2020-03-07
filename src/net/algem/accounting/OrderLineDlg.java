@@ -218,7 +218,7 @@ public class OrderLineDlg
             update(e);
           }
         } catch (ParseException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex.getMessage(), ex);
         } finally {
           closeEditorView();
         }
@@ -341,7 +341,7 @@ public class OrderLineDlg
         tableView.setElementAt(ol, row);
       }
     } catch (SQLException e) {
-      GemLogger.log(e.getMessage());
+      GemLogger.logException(e.getMessage(), e);
     }
   }
 
@@ -520,7 +520,7 @@ public class OrderLineDlg
         tableModel.addElement(c);
       }
     } catch (SQLException ex) {
-      GemLogger.log(MessageUtil.getMessage("payment.add.exception") + ex.getMessage());
+      GemLogger.logException(MessageUtil.getMessage("payment.add.exception") + ex.getMessage(), ex);
     } 
   }
 

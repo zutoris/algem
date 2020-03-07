@@ -98,7 +98,7 @@ public class ActionIO
         }
       });
     } catch (Exception e) {
-      GemLogger.log(e.getMessage());
+      GemLogger.logException(e);
       throw new PlanningException(e.getMessage());
     }
   }
@@ -127,7 +127,7 @@ public class ActionIO
       dc.commit();
     } catch (SQLException ex) {
       dc.rollback();
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       throw new PlanningException(ex.getMessage());
     } finally {
       dc.setAutoCommit(true);
@@ -245,7 +245,7 @@ public class ActionIO
         a = getFromRS(rs);
       }
     } catch (SQLException ex) {
-      GemLogger.log(Level.SEVERE, ex.getMessage());
+      GemLogger.log(Level.SEVERE, ex);
     }
     return a;
   }
@@ -260,7 +260,7 @@ public class ActionIO
         va.addElement(a);
       }
     } catch (SQLException ex) {
-      GemLogger.log(Level.SEVERE, ex.getMessage());
+      GemLogger.log(Level.SEVERE, ex);
     }
 
     return va;
@@ -395,7 +395,7 @@ public class ActionIO
         colors.put(rs.getInt(1), rs.getInt(2));
       }
     } catch (SQLException e) {
-      GemLogger.log(e.getMessage());
+      GemLogger.logException(e);
     } finally {
       closeRS(rs);
     }
@@ -432,7 +432,7 @@ public class ActionIO
         colorStatement = dc.prepareStatement(ACTION_COLOR_QUERY);
       }
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       return 0;
     }
     try {
@@ -442,7 +442,7 @@ public class ActionIO
         return rs.getInt(1);
       }
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     } finally {
       closeRS(rs);
     }

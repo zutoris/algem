@@ -78,7 +78,7 @@ class ModifPlanCourseView
     try {
       dateRange.setEnd(PlanningService.getLastDate(plan.getIdAction(), DataCache.getDataConnection()));
     } catch (SQLException ex) {
-      GemLogger.log(Level.WARNING, ex.getMessage());
+      GemLogger.log(Level.WARNING, ex);
       dateRange.setEnd(dataCache.getEndOfYear());//fin du cours par défaut
     }
     dateRange.setEnabled(false, 1);

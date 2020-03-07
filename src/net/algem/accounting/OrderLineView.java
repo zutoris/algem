@@ -410,19 +410,19 @@ public class OrderLineView
     try {
       orderLine.setPayer(nf.parse(payer.getText()).intValue());
     } catch (ParseException ignore) {
-      GemLogger.log(ignore.getMessage());
+      GemLogger.logException(ignore.getMessage(), ignore);
       orderLine.setPayer(0);
     }
     try {
       orderLine.setMember(nf.parse(member.getText()).intValue());
     } catch (ParseException ignore) {
-      GemLogger.log(ignore.getMessage());
+      GemLogger.logException(ignore.getMessage(), ignore);
       orderLine.setMember(0);
     }
     try {
       orderLine.setGroup(nf.parse(group.getText()).intValue());
     } catch (ParseException ignore) {
-      GemLogger.log(ignore.getMessage());
+      GemLogger.logException(ignore.getMessage(), ignore);
       orderLine.setGroup(0);
     }
     orderLine.setDate(date.getDate());

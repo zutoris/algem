@@ -405,7 +405,7 @@ public class CourseEnrolmentDlg
     try {
       return Integer.parseInt(ConfigUtil.getConf(ConfigKey.DEFAULT_ESTABLISHMENT.getKey()));
     } catch (NumberFormatException nfe) {
-      GemLogger.log(nfe.getMessage());
+      GemLogger.logException(nfe);
     }
     return 0;
   }
@@ -439,7 +439,7 @@ public class CourseEnrolmentDlg
     try {
       c = (Course) DataCache.findId(id, Model.Course);
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName() + "#loadCourse :" + ex.getMessage());
+      GemLogger.logException(ex);
     }
     if (c == null) {
       return;

@@ -83,7 +83,7 @@ public class ModuleCtrl
         try {
           delete(view.get());
         } catch (ModuleException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex);
           MessagePopup.warning(this, ex.getMessage());
           return false;
         }

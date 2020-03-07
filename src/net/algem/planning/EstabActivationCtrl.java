@@ -109,7 +109,7 @@ public class EstabActivationCtrl
         model.addItem(e);
       }
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
   }
 
@@ -126,7 +126,7 @@ public class EstabActivationCtrl
         changed = true;
       } catch (SQLException ex) {
         changed = false;
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
       }
     }
   }

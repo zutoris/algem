@@ -220,7 +220,7 @@ public class ExportMemberRTF
             );
           }
         } catch (SQLException ex) {
-          GemLogger.log(getClass().getName()+"#editeInscription "+ex.getMessage());
+          GemLogger.logException(ex);
         }
       }
     }

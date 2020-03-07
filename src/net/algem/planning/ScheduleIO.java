@@ -139,7 +139,7 @@ public class ScheduleIO
         try {
           rs.close();
         } catch (SQLException ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex);
         }
       }
     }

@@ -84,7 +84,7 @@ public class ItemListCtrl
         try {
           return BundleUtil.getLabel("Account.label") + " : " + DataCache.findId(a, Model.Account).toString();
         } catch (SQLException ex) {
-          GemLogger.log(Level.WARNING, ex.getMessage());
+          GemLogger.log(Level.WARNING, ex);
           return null;
         }
       }

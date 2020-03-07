@@ -36,7 +36,7 @@ public class HoursTaskFactory {
     } catch (InstantiationException | IllegalAccessException ex) {
       GemLogger.logException(ex);
     } catch (ClassNotFoundException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
     return null;
   }

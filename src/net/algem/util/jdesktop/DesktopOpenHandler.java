@@ -53,7 +53,7 @@ public class DesktopOpenHandler
           getDesktop().open(new File(path));
         }
       } catch (IOException e) {
-        GemLogger.log("Desktop Open io Exception " + e.getMessage());
+        GemLogger.logException(e);
         executeClient(paths);
       }
     } else {

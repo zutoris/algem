@@ -100,7 +100,7 @@ public class ModulePresetDlg
     try {
       help.setPage(url);
     } catch (IOException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
     help.setEditable(false);
 
@@ -182,7 +182,7 @@ public class ModulePresetDlg
         close();
       }
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
   }
 

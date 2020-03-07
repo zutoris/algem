@@ -1100,7 +1100,7 @@ public class PlanningService {
     try {
       return ((CourseIO) DataCache.getDao(Model.Course)).find(query);
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName(), "getCourseByTeacher", ex);
+      GemLogger.logException(ex);
     }
     return null;
   }

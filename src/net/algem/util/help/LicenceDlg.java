@@ -55,7 +55,7 @@ extends AbstractHelpDlg
     try {
       editorPane.setPage(getResource("licence.html"));
     } catch (IOException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
     JScrollPane scroll = new JScrollPane(editorPane);
     

@@ -214,7 +214,7 @@ public class AttendanceQuaterSheet
                 line += LINE_HEIGHT;
             }
         } catch (SQLException e) {
-            GemLogger.log(getClass().getName(), "edite", e);
+            GemLogger.logException(e);
         } finally {
             if (g != null) {
                 g.dispose();
@@ -307,7 +307,7 @@ public class AttendanceQuaterSheet
                         instrumentName = " - " + instrument.getName();
                     }
                 } catch (Exception e) {
-                    GemLogger.log(e.getMessage());
+                    GemLogger.logException(e);
                 }
             }
 

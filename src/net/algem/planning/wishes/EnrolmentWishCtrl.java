@@ -487,7 +487,7 @@ public class EnrolmentWishCtrl implements ActionListener, TableModelListener {
                 GemLogger.log("EnrolmentWishCtrl.actionPerformed unknown evt=" + evt);
             }
         } catch (Exception e) {
-            GemLogger.log("EnrolmentWishCtrl.actionPerformed e=" + e);
+            GemLogger.logException(e);
             e.printStackTrace();
             MessagePopup.information(view, MessageUtil.getMessage("enrolment.wish.exception", e.getMessage()));
         }

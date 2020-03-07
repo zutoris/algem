@@ -88,7 +88,7 @@ public class DayPlanAdminView
           try {
             range.setFollowUp(ScheduleIO.findFollowUp(range.getNote(), DataCache.getDataConnection()));
           } catch (SQLException ex) {
-            GemLogger.log(ex.getMessage());
+            GemLogger.logException(ex);
           }
         }
         else if (range.getPerson() != null && range.getPerson().getId() == personId) {

@@ -223,7 +223,7 @@ public class RoomService
     try {
       return roomTimesIO.find(roomId);
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       return getDefaultDailyTimes();
     }
   }

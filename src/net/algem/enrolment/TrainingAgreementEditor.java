@@ -129,7 +129,7 @@ public class TrainingAgreementEditor
     try {
       org = new JComboBox<>(trainingService.getOrganizations());
     } catch (SQLException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       org.addItem(new Organization());
     }
     season = new JTextField(20);

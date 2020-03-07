@@ -90,7 +90,7 @@ public class ItemView
     try {
       i = Integer.parseInt(idString);
     } catch (NumberFormatException nfe) {
-      GemLogger.log(Level.WARNING, nfe.getMessage());
+      GemLogger.log(Level.WARNING, nfe);
     }
     Item a = new Item(i);
     a.setDesignation(designation.getText().trim());

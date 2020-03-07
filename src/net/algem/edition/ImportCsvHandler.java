@@ -147,7 +147,7 @@ public class ImportCsvHandler {
           contacts.add(c);
         }
       } catch (SuperCsvCellProcessorException pex) {
-          GemLogger.log(pex.getMessage());
+          GemLogger.logException(pex);
           errors++;
       }
     }

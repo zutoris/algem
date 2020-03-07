@@ -130,7 +130,7 @@ public class DefaultUserService
         try {
           u = dao.findId(Integer.parseInt(login));
         } catch (NumberFormatException ex) {
-          GemLogger.log(Level.WARNING, ex.getMessage());
+          GemLogger.log(Level.WARNING, ex);
         }
       }
     } catch (SQLException ex) {

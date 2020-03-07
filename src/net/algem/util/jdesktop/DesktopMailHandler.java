@@ -60,7 +60,7 @@ public class DesktopMailHandler
           getDesktop().mail();
         }
       } catch (IOException ioe) {
-        GemLogger.log(Level.WARNING, getClass().getName(), "send", ioe.getMessage());
+        GemLogger.log(Level.WARNING, ioe);
         executeMailClient(_to, bcc);
       } catch (URISyntaxException use) {
         GemLogger.logException(use);

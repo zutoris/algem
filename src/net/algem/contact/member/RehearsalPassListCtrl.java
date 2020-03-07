@@ -97,7 +97,7 @@ public class RehearsalPassListCtrl
           try {
             update();
           } catch (SQLException ex) {
-            GemLogger.log(ex.getMessage());
+            GemLogger.logException(ex);
           }
         }
       }
@@ -145,7 +145,7 @@ public class RehearsalPassListCtrl
         desktop.removeModule("Menu.card");
       }
     } catch (SQLException ex) {
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
     }
   }
 

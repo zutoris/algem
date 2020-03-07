@@ -152,7 +152,7 @@ public class InvoiceView
           String org = p.getOrganization() != null ? p.getOrganization().getCompanyName() : null;
           payerName.setText(org != null && org.length() > 0 ? org : p.getFirstnameName());
         } catch (Exception ex) {
-          GemLogger.log(ex.getMessage());
+          GemLogger.logException(ex);
         }
       }
 
@@ -328,7 +328,7 @@ public class InvoiceView
       q.setNumber(invoiceId.getText());
       //Quote inv = new Invoice(invoiceId.getText());
     } catch (ReflectiveOperationException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
       q = new Invoice(invoiceId.getText());
     }
 
@@ -339,7 +339,7 @@ public class InvoiceView
     try {
       q.setPayer(Integer.parseInt(payerId.getText()));
     } catch (NumberFormatException ex) {
-      GemLogger.log(ex.getMessage());
+      GemLogger.logException(ex);
     }
     double a = ((Number) downPayment.getValue()).doubleValue();
     q.setDownPayment(Math.abs(a));

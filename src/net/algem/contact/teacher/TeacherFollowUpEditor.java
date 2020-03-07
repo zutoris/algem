@@ -112,7 +112,7 @@ public class TeacherFollowUpEditor
           try {
             modification(n);
           } catch (SQLException sqe) {
-            GemLogger.log(sqe.getMessage());
+            GemLogger.logException(sqe);
           }
         }
       }
@@ -239,7 +239,7 @@ public class TeacherFollowUpEditor
       totalTime.setText(Hour.format(min));
 
     } catch (SQLException ex) {
-      GemLogger.log(getClass().getName() + "#load " + ex.getMessage());
+      GemLogger.logException(ex);
     }
   }
 
@@ -265,7 +265,7 @@ public class TeacherFollowUpEditor
       try {
         modification(n);
       } catch (SQLException e) {
-        GemLogger.log(e.getMessage());
+        GemLogger.logException(e);
       }
     }
   }

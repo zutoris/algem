@@ -214,7 +214,7 @@ public class MenuAccounting
         accounts = service.getAccounts();
         costAccounts = service.getActiveCostAccounts();
       } catch (SQLException ex) {
-        GemLogger.log(ex.getMessage());
+        GemLogger.logException(ex);
       }
       AccountPrefListCtrl prefAccountList = new AccountPrefListCtrl(desktop, service, accounts, costAccounts);
       prefAccountList.load(keys);

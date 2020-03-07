@@ -145,7 +145,7 @@ public class CommonAccountTransferDlg
       String msgKey = transfered > 1 ? "payment.transfer.info" : "payment.single.transfer.info";
       MessagePopup.information(this, MessageUtil.getMessage(msgKey, new Object[]{transfered, path}));
     } catch (IOException ioe) {
-      GemLogger.log(ioe.getMessage());
+      GemLogger.logException(ioe.getMessage(), ioe);
     } catch (SQLException sqe) {
       GemLogger.logException(MessageUtil.getMessage("payment.transfer.exception"), sqe, this);
     } finally {

@@ -374,7 +374,7 @@ public class PersonView
     try {
       return Integer.parseInt(no.getText());
     } catch (NumberFormatException e) {
-      GemLogger.log(Level.WARNING, e.getMessage());
+      GemLogger.log(Level.WARNING, e);
       return 0;
     }
   }

@@ -95,7 +95,7 @@ public class ModuleSearchCtrl
     try {
       v = ((ModuleIO) DataCache.getDao(Model.Module)).find(query);
     } catch (SQLException sqe) {
-      GemLogger.log(getClass().getName() + "#search " + sqe.getMessage());
+      GemLogger.logException(sqe);
     }
     if (v == null || v.isEmpty()) {
       setStatus(EMPTY_LIST);
